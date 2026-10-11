@@ -37,25 +37,17 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
 
   const handleVerifyOwner = (e: React.FormEvent) => {
     e.preventDefault();
-    // Default PIN: 84998 (from Mr. Minh's phone number +84 986 998) or 'minh' or 'admin'
-    if (ownerPin.trim() === '84998' || ownerPin.trim().toLowerCase() === 'minh' || ownerPin.trim() === '998677') {
+    if (ownerPin.trim() === '29062022') {
       setIsOwnerVerified(true);
       setShowOwnerAuth(false);
       setPinError(false);
+      setOwnerPin('');
       try {
         localStorage.setItem('minh_owner_verified', 'true');
       } catch {}
     } else {
       setPinError(true);
     }
-  };
-
-  const handleQuickOwnerAuth = () => {
-    setIsOwnerVerified(true);
-    setShowOwnerAuth(false);
-    try {
-      localStorage.setItem('minh_owner_verified', 'true');
-    } catch {}
   };
 
   const handleLockOwner = () => {
@@ -287,13 +279,13 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
                   </div>
                   <p className="text-[11px] text-slate-500 leading-snug">
                     {language === 'EN'
-                      ? 'Confirm identity to update profile photo.'
-                      : 'Nhập mã xác thực chủ nhân để kích hoạt quyền cập nhật ảnh:'}
+                      ? 'Enter private security passcode to unlock management:'
+                      : 'Nhập mã khóa riêng để mở quyền quản lý ảnh:'}
                   </p>
                   <div className="flex gap-2">
                     <input
                       type="password"
-                      placeholder="Mã PIN (VD: 84998)"
+                      placeholder={language === 'EN' ? 'Passcode...' : 'Nhập mã khóa riêng...'}
                       value={ownerPin}
                       onChange={(e) => {
                         setOwnerPin(e.target.value);
@@ -307,19 +299,16 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
                       type="submit"
                       className="px-3 py-1.5 text-xs font-semibold bg-[#1e3a8a] hover:bg-[#172554] text-white rounded-md cursor-pointer"
                     >
-                      Mở khóa
+                      {language === 'EN' ? 'Unlock' : 'Mở khóa'}
                     </button>
                   </div>
                   {pinError && (
-                    <p className="text-[10px] text-red-500">Mã chưa đúng. Bạn có thể nhấn xác thực nhanh bên dưới:</p>
+                    <p className="text-[10px] text-red-500 font-medium">
+                      {language === 'EN'
+                        ? 'Incorrect passcode. Please try again.'
+                        : 'Mã khóa không đúng. Vui lòng thử lại.'}
+                    </p>
                   )}
-                  <button
-                    type="button"
-                    onClick={handleQuickOwnerAuth}
-                    className="text-[11px] text-[#1e3a8a] hover:underline block font-medium cursor-pointer"
-                  >
-                    👉 Tôi là Nguyễn Đắc Minh (Xác nhận nhanh dacminhm@gmail.com)
-                  </button>
                 </form>
               )}
             </div>

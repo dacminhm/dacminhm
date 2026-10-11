@@ -2,5 +2,7 @@
   "name": "Official Dossier & Executive CV - Nguyen Dac Minh",
   "description": "Executive Leadership Profile & Curriculum Vitae for Nguyen Dac Minh - Head of Planning & Finance and Senior Researcher in Data Standardization & GS1 at NBC / STAMEQ Vietnam.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
