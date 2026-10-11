@@ -4,6 +4,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  plugins: [react()],
   base: '/dacminhm/',
   return {
     plugins: [react(), tailwindcss()],
