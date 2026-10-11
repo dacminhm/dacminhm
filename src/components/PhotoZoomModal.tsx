@@ -24,6 +24,13 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
   const [isOwnerVerified, setIsOwnerVerified] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const candidateUrls = currentImage
+    ? [currentImage]
+    : ['./avatar.png', './minh 3.png', './minh-3.png', './avatar.jpg', './minh.png'];
+
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [allFailed, setAllFailed] = useState(false);
+
   useEffect(() => {
     try {
       const verified = localStorage.getItem('minh_owner_verified') === 'true';
@@ -31,9 +38,29 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
     } catch {
       setIsOwnerVerified(false);
     }
-  }, [isOpen]);
+    setCurrentIdx(0);
+    setAllFailed(false);
+  }, [isOpen, currentImage]);
+
+  const handleModalImgError = () => {
+    if (currentIdx + 1 < candidateUrls.length) {
+      setCurrentIdx((prev) => prev + 1);
+    } else {
+      setAllFailed(true);
+    }
+  };
 
   if (!isOpen) return null;
+
+  const handleDownloadAvatar = () => {
+    if (!currentImage) return;
+    const link = document.createElement('a');
+    link.href = currentImage;
+    link.download = 'avatar.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const handleVerifyOwner = (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,11 +137,12 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
         <div className="p-6 flex flex-col items-center bg-slate-50/50">
           <div className="w-60 h-60 rounded-full p-2 bg-gradient-to-tr from-amber-500 via-amber-300 to-amber-600 shadow-xl relative">
             <div className="w-full h-full rounded-full overflow-hidden bg-[#E59800] relative flex items-center justify-center">
-              {currentImage ? (
+              {!allFailed && candidateUrls[currentIdx] ? (
                 <img
-                  src={currentImage}
+                  src={candidateUrls[currentIdx]}
                   alt="Nguyen Dac Minh portrait"
                   className="w-full h-full object-cover object-top"
+                  onError={handleModalImgError}
                 />
               ) : (
                 /* High-fidelity SVG recreation matching minh 3.png with yellow roses & pinstripe suit */
@@ -340,15 +368,35 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
                 </button>
 
                 {currentImage && (
-                  <button
-                    type="button"
-                    onClick={() => onUpdateImage('')}
-                    className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
-                    title="Khôi phục ảnh mặc định"
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </button>
+                  <>
+                    <button
+                      type="button"
+                      onClick={handleDownloadAvatar}
+                      className="py-2 px-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-semibold flex items-center gap-1 cursor-pointer"
+                      title="Lưu file avatar.png để đưa vào thư mục public/ trên GitHub"
+                    >
+                      <span>⬇ Lưu avatar.png</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => onUpdateImage('')}
+                      className="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+                      title="Khôi phục ảnh mặc định"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </>
                 )}
+              </div>
+
+              {/* Deployment hint */}
+              <div className="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200/60 text-[11px] text-slate-700 leading-relaxed">
+                <span className="font-semibold text-[#1e3a8a]">
+                  {language === 'EN' ? 'Global Visibility on dacminhm.ai.studio:' : 'Hiển thị toàn cầu trên dacminhm.ai.studio:'}
+                </span>{' '}
+                {language === 'EN'
+                  ? 'To make this image visible to all visitors worldwide on your GitHub Pages / custom domain, place this avatar.png in your project’s public/ folder or paste a public image URL below.'
+                  : 'Để ảnh hiện vĩnh viễn cho tất cả khách xem trên web GitHub Pages / tên miền riêng: Chỉ cần đặt file avatar.png vào thư mục public/ của dự án rồi push lên GitHub, hoặc dán đường dẫn link ảnh cố định bên dưới.'}
               </div>
 
               {!showInput ? (

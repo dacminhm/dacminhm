@@ -17,9 +17,9 @@ export default function App() {
   const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
   const [customAvatarUrl, setCustomAvatarUrl] = useState<string>(() => {
     try {
-      return localStorage.getItem('minh_avatar_data') || '';
+      return localStorage.getItem('minh_avatar_data') || dossierData.defaultAvatarUrl || './avatar.png';
     } catch {
-      return '';
+      return dossierData.defaultAvatarUrl || './avatar.png';
     }
   });
   const [toastMessage, setToastMessage] = useState<string | null>(null);

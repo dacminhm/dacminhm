@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ZoomIn, ShieldCheck } from 'lucide-react';
 
 interface ExecutiveAvatarProps {
@@ -12,6 +12,26 @@ export const ExecutiveAvatar: React.FC<ExecutiveAvatarProps> = ({
   imageUrl,
   language = 'VI',
 }) => {
+  const candidateUrls = imageUrl
+    ? [imageUrl]
+    : ['./avatar.png', './minh 3.png', './minh-3.png', './avatar.jpg', './minh.png'];
+
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [allFailed, setAllFailed] = useState(false);
+
+  useEffect(() => {
+    setCurrentIdx(0);
+    setAllFailed(false);
+  }, [imageUrl]);
+
+  const handleImgError = () => {
+    if (currentIdx + 1 < candidateUrls.length) {
+      setCurrentIdx((prev) => prev + 1);
+    } else {
+      setAllFailed(true);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center">
       <div
@@ -22,11 +42,12 @@ export const ExecutiveAvatar: React.FC<ExecutiveAvatarProps> = ({
         {/* Outer subtle golden ring matching Image 1.png & minh 3.png */}
         <div className="w-36 h-36 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-amber-300 to-amber-600 shadow-md group-hover:scale-[1.02] transition-transform duration-200">
           <div className="w-full h-full rounded-full overflow-hidden relative bg-[#E59800]">
-            {imageUrl ? (
+            {!allFailed && candidateUrls[currentIdx] ? (
               <img
-                src={imageUrl}
+                src={candidateUrls[currentIdx]}
                 alt="Nguyen Dac Minh"
                 className="w-full h-full object-cover object-top"
+                onError={handleImgError}
               />
             ) : (
               /* High-fidelity SVG recreation matching minh 3.png with yellow roses & pinstripe suit */
