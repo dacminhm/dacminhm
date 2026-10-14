@@ -50,7 +50,10 @@ export interface HonorItem {
 }
 
 export interface DossierData {
-  name: string;
+  name: {
+    en: string;
+    vi: string;
+  };;
   defaultAvatarUrl?: string;
   titles: {
     en: string;
