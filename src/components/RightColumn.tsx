@@ -23,7 +23,7 @@ export const RightColumn: React.FC<RightColumnProps> = ({ data, language }) => {
 
             {/* Authoritative Serif Name matching Image 1.png */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-[#0d1c2f] uppercase leading-none">
-              {data.name}
+              {typeof data.name === 'string' ? data.name : (language === 'EN' ? data.name.en : data.name.vi)}
             </h1>
 
             {/* Professional Subtitles */}
