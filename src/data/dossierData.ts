@@ -1,7 +1,10 @@
 import { DossierData } from '../types/dossier';
 
 export const dossierData: DossierData = {
-  name: 'NGUYEN DAC MINH',
+  name: {
+    en:'NGUYEN DAC MINH',
+    vi: 'NGUYỄN ĐẮC MINH',
+  },
   defaultAvatarUrl: './avatar.png',
   titles: {
     en: 'HEAD OF PLANNING & FINANCE | SENIOR RESEARCHER IN DATA STANDARDIZATION & GS1',
