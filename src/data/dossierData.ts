@@ -133,16 +133,16 @@ export const dossierData: DossierData = {
       periodVi: '05/2025 – Hiện tại',
       title: 'Acting Head of Planning & Finance Department | Senior Researcher',
       titleVi: 'Trưởng phòng Kế hoạch Tài chính | Nghiên cứu viên chính',
-      organization: 'National Barcode Center (NBC), National Commission for Standards, Metrology and Quality of Vietnam (STAMEQ)',
+      organization: 'National Numbering & Barcode Center (NBC), National Commission for Standards, Metrology and Quality of Vietnam (STAMEQ)',
       organizationVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), Ủy ban Tiêu chuẩn Đo lường Chất lượng Quốc gia (STAMEQ)',
       currentRole: true,
       bullets: [
         'Lead strategic financial and operational planning for national data standards and product coding systems.',
-        'Manage public resource schemes and budget allocation for standard-setting projects.',
+        'Manage public resource schemes and budget allocation for digital transformation projects and initiatives.',
       ],
       bulletsVi: [
         'Chủ trì xây dựng kế hoạch chiến lược tài chính và vận hành cho hệ thống tiêu chuẩn dữ liệu và mã số mã vạch quốc gia.',
-        'Quản lý đề án nguồn lực công và phân bổ ngân sách cho các dự án xây dựng tiêu chuẩn quốc gia.',
+        'Quản lý đề án nguồn lực và phân bổ tài chính cho các dự án/nhiệm vụ chuyển đổi số.',
       ],
     },
     {
@@ -151,7 +151,7 @@ export const dossierData: DossierData = {
       periodVi: '01/2025 – 04/2025',
       title: 'Deputy Head (Officer-in-Charge), Planning & Finance Department | Senior Researcher',
       titleVi: 'Phó Trưởng phòng (Phụ trách), Phòng Kế hoạch Tài chính | Nghiên cứu viên chính',
-      organization: 'National Barcode Center (NBC), STAMEQ',
+      organization: 'National Numbering & Barcode Center (NBC), STAMEQ',
       organizationVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), STAMEQ',
     },
     {
@@ -160,7 +160,7 @@ export const dossierData: DossierData = {
       periodVi: '09/2024 – 01/2025',
       title: 'Deputy Head (Officer-in-Charge), R&D Department | Senior Researcher',
       titleVi: 'Phó Trưởng phòng (Phụ trách), Phòng Nghiên cứu và Phát triển | Nghiên cứu viên chính',
-      organization: 'National Barcode Center (NBC), STAMEQ',
+      organization: 'National Numbering & Barcode Center (NBC), STAMEQ',
       organizationVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), STAMEQ',
       bullets: [
         'Spearheaded R&D on next-generation GS1 Digital Link architectures and national traceability standards.',
@@ -175,7 +175,7 @@ export const dossierData: DossierData = {
       periodVi: '12/2021 – 09/2024',
       title: 'Deputy Head / Officer-in-Charge, Research & Development Department',
       titleVi: 'Phó Trưởng phòng / Phụ trách, Phòng Nghiên cứu & Phát triển',
-      organization: 'National Barcode Center (NBC), Directorate for Standards, Metrology and Quality of Vietnam',
+      organization: 'National Numbering & Barcode Center (NBC), Directorate for Standards, Metrology and Quality of Vietnam',
       organizationVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), Tổng cục Tiêu chuẩn Đo lường Chất lượng',
       bullets: [
         'Directed technical research projects and drafted specifications for national electronic authentication stamps.',
@@ -190,7 +190,7 @@ export const dossierData: DossierData = {
       periodVi: '06/2018 – 11/2021',
       title: 'Researcher',
       titleVi: 'Nghiên cứu viên',
-      organization: 'National Barcode Center (NBC), STAMEQ',
+      organization: 'National Numbering & Barcode Center (NBC), STAMEQ',
       organizationVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), STAMEQ',
     },
     {
