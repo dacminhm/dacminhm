@@ -36,7 +36,7 @@ VERSION:3.0
 FN:Nguyen Dac Minh
 N:Nguyen;Dac Minh;;;
 TITLE:Acting Head of Planning & Finance / Senior Researcher
-ORG:National Barcode Center (GS1 Vietnam);STAMEQ
+ORG:National Numbering & Barcode Center (GS1 Vietnam);STAMEQ
 TEL;TYPE=CELL:+84986998677
 EMAIL;TYPE=WORK:dacminhm@gmail.com
 ADR;TYPE=WORK:;;No. 8 Hoang Quoc Viet;Cau Giay;Hanoi;;Vietnam

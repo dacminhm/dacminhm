@@ -263,7 +263,7 @@ export const PhotoZoomModal: React.FC<PhotoZoomModalProps> = ({
                 : 'Trưởng phòng Kế hoạch Tài chính | Nghiên cứu viên chính về tiêu chuẩn hóa & GS1'}
             </p>
             <p className="text-[11px] text-slate-500 mt-1">
-              National Barcode Center (GS1 Vietnam) • STAMEQ
+              National Numbering & Barcode Center (GS1 Vietnam) • STAMEQ
             </p>
           </div>
 

@@ -31,7 +31,7 @@ export const dossierData: DossierData = {
     vi: 'HỒ SƠ LÃNH ĐẠO ĐIỀU HÀNH',
   },
   summary: {
-    en: 'Senior Researcher and Planning & Finance Department Lead at the National Barcode Center (GS1 Vietnam - STAMEQ). Over 16 years of dedicated experience driving national technical standards, IT standardization, and traceability solutions. Expert in bridging regulatory governance with advanced technologies, including GS1 Digital Link, digital product passports, and secure data architecture.',
+    en: 'Senior Researcher and Planning & Finance Department Lead at the National Numbering & Barcode Center (GS1 Vietnam - STAMEQ). Over 16 years of dedicated experience driving national technical standards, IT standardization, and traceability solutions. Expert in bridging regulatory governance with advanced technologies, including GS1 Digital Link, digital product passports, and secure data architecture.',
     vi: 'Nghiên cứu viên chính kiêm Trưởng phòng Kế hoạch Tài chính tại Trung tâm Mã số Mã vạch Quốc gia (GS1 Việt Nam – STAMEQ). Hơn 16 năm cống hiến và đóng góp chuyên sâu trong xây dựng tiêu chuẩn kỹ thuật quốc gia, chuẩn hóa CNTT và các giải pháp truy xuất nguồn gốc. Chuyên gia kết nối quản trị chính sách với công nghệ tiên tiến: GS1 Digital Link, hộ chiếu sản phẩm số (DPP) và kiến trúc dữ liệu an toàn.',
   },
   contact: {
@@ -44,7 +44,7 @@ export const dossierData: DossierData = {
     strategicFocusVi: 'Tiêu chuẩn Dữ liệu, GS1 & Truy xuất Nguồn gốc',
     officeAddress: 'No. 8 Hoang Quoc Viet Street, Cau Giay District, Hanoi, Vietnam',
     officeAddressVi: 'Số 8 Hoàng Quốc Việt, Quận Cầu Giấy, Hà Nội, Việt Nam',
-    organizationFull: 'National Barcode Center (NBC), Directorate for Standards, Metrology and Quality of Vietnam (STAMEQ)',
+    organizationFull: 'National Numbering & Barcode Center (NBC), Directorate for Standards, Metrology and Quality of Vietnam (STAMEQ)',
     organizationFullVi: 'Trung tâm Mã số Mã vạch Quốc gia (NBC), Tổng cục Tiêu chuẩn Đo lường Chất lượng / Ủy ban TCĐLCL Quốc gia (STAMEQ)',
   },
   education: [

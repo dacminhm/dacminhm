@@ -76,7 +76,7 @@ export const RightColumn: React.FC<RightColumnProps> = ({ data, language }) => {
                 <strong className="font-semibold text-slate-900">
                   Senior Researcher and Planning & Finance Department Lead
                 </strong>{' '}
-                at the National Barcode Center (GS1 Vietnam – STAMEQ). Over 16 years of dedicated experience
+                at the National Numbering & Barcode Center (GS1 Vietnam – STAMEQ). Over 16 years of dedicated experience
                 driving national technical standards, IT standardization, and traceability solutions. Expert in
                 bridging regulatory governance with advanced technologies, including GS1 Digital Link, digital
                 product passports, and secure data architecture.

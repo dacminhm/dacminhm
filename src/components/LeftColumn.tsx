@@ -223,7 +223,7 @@ export const LeftColumn: React.FC<LeftColumnProps> = ({
         <p>© 2025 Nguyen Dac Minh</p>
         <p>
           {language === 'EN'
-            ? 'National Barcode Center • STAMEQ Vietnam'
+            ? 'National Numbering & Barcode Center • STAMEQ Vietnam'
             : 'Trung tâm Mã số Mã vạch Quốc gia • STAMEQ Việt Nam'}
         </p>
       </div>
